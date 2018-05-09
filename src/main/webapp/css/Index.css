@@ -1,0 +1,88 @@
+[genuitec-file-id="wc1-0"],[genuitec-lp-path="/SSM/WebRoot/css/Index.css"],[genuitec-lp-enabled=false]{
+  /* for codelive */
+}
+
+
+#menu-header1{
+	position: absolute;
+	width:120px;
+	height: 100px;
+	left:800px;
+	top:20px;
+}
+
+#menu-header2{
+	position: absolute;
+	width:150px;
+	height: 100px;
+	left:920px;
+	top:20px;
+}
+#menu-header3{
+	position: absolute;
+	width:120px;
+	height: 100px;
+	left:1060px;
+	top:20px;
+}
+#theme{
+	position: absolute;
+	width: 180px;
+	height: 450px;
+	border: 1px solid #222222;
+	border-radius: 10px;
+	left:70px;
+	top:200px;
+}
+#theme ul li{
+	padding-top: 14px;
+	list-style: none;
+}
+#divoftheme{
+	position: absolute;
+	width:500px;
+	height: 450px;
+	left:250px;
+	top:200px;
+	border:1px solid #222222;
+
+}
+#clothes1{
+    position: relative;
+    width:500px;
+    height:150px;
+    border:1px solid red;
+
+}
+#clothes2{
+    position: relative;
+    width:500px;
+    height:150px;
+    border:1px solid red;
+}
+#clothes3{
+    position: relative;
+    width:500px;
+    height:150px;
+    border:1px solid red;
+}
+#search{
+	position: absolute;
+	width:450px;
+	height: 30px;
+	left:500px;
+	top:120px;
+}
+#Search{
+	position: relative;
+	width:400px;
+    height:30px;
+
+}#buttonOfSearch{
+	position: relative;
+	width:50px;
+	height:30px;
+	left:436px;
+	top:-30px;
+}
+
