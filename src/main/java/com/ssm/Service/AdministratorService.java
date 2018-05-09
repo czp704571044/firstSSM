@@ -25,4 +25,6 @@ public interface AdministratorService {
     List<Item> findItemsByItemsName(String ItemName);
 
 	Administrator findAdministratorByAdministratorName();
+	
+	
 }
