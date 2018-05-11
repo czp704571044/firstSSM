@@ -39,6 +39,6 @@
         </div>
         <a href="${pageContext.request.contextPath }/user/findPasswordPage.do">忘记密码了？</a>
      </form>
-	</div>
+    </div>
 </body>
 </html>

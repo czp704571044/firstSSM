@@ -39,7 +39,11 @@
  
  <select id="findUserByUsername" parameterType="String" resultType="User">
  select * from user
- where username=#{username}
+ where username="%"#{username}"%"
  
  </select>
+ 
+ <resultMap type="User" id="userMap">
+ <id column="user_id" property="id"/>
+ </resultMap>
  </mapper>
