@@ -32,7 +32,7 @@
           <input type="text" name="code" id="codeInput" placeholder="请输入验证码">
         </div>
         </div>
-        <div class="for">
+        <div class="form-group">
           <div class="col-lg-offset-3 col-lg-9">
         <input type="submit" class="btn-primary" value="登录">
         <a href="${pageContext.request.contextPath}/user/registerPage.do">注册</a>
