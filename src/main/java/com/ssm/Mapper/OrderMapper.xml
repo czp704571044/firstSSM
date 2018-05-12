@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.ssm.Mapper.OrderMapper">
+ <insert id="insertOrder">
+ insert into order
+ (create_time,total_cost,status,user_id,note,name) values(#{create_time},#{total_cost},#{status},#{user_id},#{note},#{name})
+ </insert>
+ 
+ <select id="getOrder">
+ select * from order,orderdetail where user_id=#{user_id}
+ </select>
+ 
+<resultMap type="Order" id="order">
+<id column="order_id" property="OrderId"/>
+<result column="create_time" property="createTime"/>
+<result column="total_cost" property="totalCost"/>
+<association property="user" javaType="com.ssm.Po.User">
+<id column="user_id" property="userId"/>
+</association>
+</resultMap>
+ </mapper>

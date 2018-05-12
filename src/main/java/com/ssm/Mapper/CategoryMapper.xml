@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.ssm.Mapper.CategoryMapper">
+ <select id="getAll">
+ select * from 
+ category
+ </select>
+ <select id="getAllByCategoryId">
+ select * from
+ category
+ where parent_id=#{parent_id}
+ </select>
+ <resultMap type="com.ssm.Po.Category" id="category">
+ <id column="category_id" property="categoryId"/>
+ <association property="parent" javaType="com.ssm.Po.Parent">
+ <id column="parent_id" property="parentId"/>
+ </association>
+ </resultMap>
+ </mapper>

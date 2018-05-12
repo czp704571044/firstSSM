@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.ssm.Mapper.ItemMapper">
+ <select id="findItemById" parameterType="int" resultType="Item">
+ select * from
+ item
+ where id=#{id}
+ </select>
+ 
+ <select id="findItemByName">
+ select * from item 
+ where name like "%"#{name}"%"
+ </select>
+ 
+ <insert id="addItems" parameterType="Item">
+ insert into item (name,description,price,stock,img,sale,) values(#{name},#{description},#{price},#{stock},#{img},#{sale},#{category_id})
+ </insert>
+ 
+ <select id="queryAllItems">
+ select * from 
+ item
+ </select>
+ 
+ <delete id="deleteItem" parameterType="int">
+ delete from item
+ where id=#{id}
+ </delete>
+ 
+ <update id="updateItem">
+ update item set name=#{name},description=#{description},price=#{price},stock=#{stock},img=#{img},category_id=#{category_id}
+ </update>
+ 
+ <resultMap type="com.ssm.Po.Item" id="item">
+ <id column="id" property="itemId"/>
+ <result column="name" property="itemName"/>
+ <association property="">
+ <result column="category_id" property="categoryId"/>
+ </association>
+ </resultMap>
+ </mapper>
+ 
