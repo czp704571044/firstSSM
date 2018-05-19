@@ -35,7 +35,7 @@
         <div class="form-group">
           <div class="col-lg-offset-3 col-lg-9">
         <input type="submit" class="btn-primary" value="登录">
-        <a href="${pageContext.request.contextPath}/user/registerPage.do">注册</a>
+        <a href="${pageContext.request.contextPath}/user/register.do">注册</a>
         </div>
         <a href="${pageContext.request.contextPath }/user/findPasswordPage.do">忘记密码了？</a>
      </form>

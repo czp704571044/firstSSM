@@ -1,24 +1,20 @@
 package com.ssm.Mapper;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
-import org.springframework.stereotype.Repository;
 
 import com.ssm.Po.User;
-@Repository
 public interface UserMapper {
- 
-	User findUserByUsernameAndPassword(@Param("username")String username, @Param("password")String password);
+   void save(User user);
+   
+   boolean update(User user);
+   
+   boolean delete(int id);
+   
+   User findUserById(int id);
+   
+   List<User> findAll();
 
-	void addUser(User user);
-
-	void updateUser(User user);
-
-	User findUserById(int id);
-
-	User findUserByUsername(String username);
-
-	
-	
-	
-	
+   User login(@Param("username")String username, @Param("password")String password);
 }

@@ -39,6 +39,24 @@
             <input type="text" name="truename"  class="form-control" placeholder="请输入要注册的真实姓名">
             </div>
 		</div>
+		   <div class="form-group">		
+			<label class="col-lg-4 control-label">年龄：</label>       
+            <div class="col-lg-8">
+            <input type="text" name="age"  class="form-control" placeholder="请输入要注册的年龄">
+            </div>
+		</div>
+		   <div class="form-group">		
+			<label class="col-lg-4 control-label">地址：</label>       
+            <div class="col-lg-8">
+            <input type="text" name="address"  class="form-control" placeholder="请输入要注册的地址">
+            </div>
+		</div>
+		   <div class="form-group">		
+			<label class="col-lg-4 control-label">手机号码：</label>       
+            <div class="col-lg-8">
+            <input type="text" name="phonenumber"  class="form-control" placeholder="请输入要注册的手机号码">
+            </div>
+		</div>
 		<div class="col-lg-4 col-lg-offset-4">
  		<input type="submit" class="btn-primary btn-lg" value="注册">
 

@@ -6,6 +6,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 <configuration>
 <typeAliases>
 <package name="com.ssm.Po"/>
-<package name="com.ssm.dbo"/>
 </typeAliases>
+
 </configuration>

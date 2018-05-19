@@ -2,15 +2,20 @@ package com.ssm.Service;
 
 
 
+import java.util.List;
+
 import com.ssm.Po.User;
 
 public interface UserService {
-   
-	User login(String username,String password);
-	void register(User user);
-	void updateInformation(User user);
-	User findUserById(int id);
-	User findUserByUsername(String username);
-	
-	
-} 
+  public void save(User user);
+	   
+  public  boolean update(User user);
+	   
+  public  boolean delete(int id);
+	   
+  public  User findUserById(int id);
+	   
+  public   List<User>findAll();
+  
+  public User login(String username,String password);
+}
