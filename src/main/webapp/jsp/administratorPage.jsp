@@ -3,11 +3,20 @@
      <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+<style>
+#form{
+position:absolute;
+width:250px;
+height:250px;
+top:300px;
+left:500px;
+}
+</style>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
-<form action="" method="post">
+<form action="${pageContext.request.contextPath }/administrator.do" method="post" id="form">
 <label>用户名：</label>
 <input type="text" name="username">
 <label>密码：</label>

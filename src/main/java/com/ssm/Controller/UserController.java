@@ -53,41 +53,53 @@ public class UserController {
 		
 	}
 	
-	@RequestMapping(value="/updatePage.do")
-	public String updatePage() {
-		return "update";
+	@RequestMapping(value="/addUserPage.do")
+	public String addUserPage() {
+		return "addUserPage";
 	}
 	
-	@RequestMapping(value="/update.do")
-	public String updateUser(User user,HttpServletRequest request,Model model) {
+	@RequestMapping(value="/addUser.do")
+	public String addUser(User user) {
+		userService.save(user);
+		return "redirect:/user/getAllUser.do";
+	}
+	
+	@RequestMapping(value="/updateUserPage.do")
+	public String updatePage(int userId,Model model) {
+		User user=userService.findUserById(userId);
+		model.addAttribute("user", user);
+		return "updateUserPage";
+	}
+	
+	@RequestMapping(value="/updateUser.do")
+	public String updateUser(User user,Model model) {
 		if(userService.update(user)) {
 			user=userService.findUserById(user.getUserId());
-			request.setAttribute("user", user);
 			model.addAttribute("user", user);
-			return "allUser";
+			return "redirect:/user/getAllUser.do";
 		}
 		else {
 			return "error";
 		}
 	}
 	
-	@RequestMapping(value="findUserById")
+	@RequestMapping(value="/findUserById.do")
 	public String findUserById(int userId,HttpServletRequest request,Model model) {
-		request.setAttribute("user", userService.findUserById(userId));
-		model.addAttribute("user", userService.findUserById(userId));
-		return "update";
+        User user=userService.findUserById(userId);
+        model.addAttribute("user", user);
+        return "findUserById";
 		
 	}
 	
-	@RequestMapping(value="delete.do")
+	@RequestMapping(value="/deleteUser.do")
 	public String deleteUser(int userId,HttpServletRequest request,HttpServletResponse response) {
 		if(userService.delete(userId)) {
-		 return "allUser";
+		 return "redirect:/user/getAllUser.do";
 		}
 		return "error";
 	}
 	
-	@RequestMapping(value="getAllUser")
+	@RequestMapping(value="/getAllUser.do")
 	public String getAllUser(HttpServletRequest request,Model model) {
 		List<User>userList=userService.findAll();
 		model.addAttribute("userList", userList);

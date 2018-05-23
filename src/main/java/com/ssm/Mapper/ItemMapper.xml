@@ -17,7 +17,7 @@ SELECT * FROM item
 </select>
 
 <select id="findItemById" parameterType="int" resultType="Item">
-SELECT FROM item 
+SELECT * FROM item 
 WHERE itemId=#{itemId}
 </select>
 

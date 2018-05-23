@@ -11,6 +11,6 @@
 <p>你成功登陆了 </p>
 
 <p>${user.username} ${msg}</p>
-
+ <a href="${pageContext.request.contextPath }/cart/cartPage.do">购物车</a>
 </body>
 </html>
