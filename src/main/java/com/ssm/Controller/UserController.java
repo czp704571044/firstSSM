@@ -131,15 +131,6 @@ public class UserController {
 		return "findPasswordPage";
 	}
 	
-	@RequestMapping(value="/findPassword.do")
-	public String findPassword(Model model,String username) {
-		String password=userService.findPassword(username);
-		model.addAttribute("password", password);
-		return "getPassword";
-	}
-	
-	
-	
 	
 	
 	

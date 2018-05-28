@@ -30,8 +30,4 @@ SELECT userId,username,password,age,truename,address,phonenumber FROM user
 SELECT * FROM user WHERE username=#{username} and password=#{password}
 </select>
 
-<select parameterType="String" resultType="String">
-SELECT  password  from user
-WHERE username=#{username} 
-</select>
 </mapper>
