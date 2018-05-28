@@ -6,11 +6,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<style>
+#color{
+color:red;
+}
+</style>
 </head>
 <body>
-<p>你成功登陆了 </p>
 
-<p>${user.username} ${msg}</p>
- <a href="${pageContext.request.contextPath }/cart/cartPage.do">购物车</a>
+<p id="color">${user.username} </p>
+   <p>${msg} </p>
+ <a href="${pageContext.request.contextPath }/user/index.do">主页</a>
 </body>
 </html>

@@ -6,8 +6,10 @@
 	<meta charset="UTF-8">
 	<title>登录</title>
 	<script src="${pageContext.request.contextPath}/reference/jquery-3.2.1.min.js"></script>
+	 <script src="${pageContext.request.contextPath}/reference/jquery.cookie.js"></script>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/reference/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/Login.css">
+    
    </head>
  
 <body>
@@ -17,7 +19,7 @@
         <div class="form-group">
         <label class="col-lg-3 control-label">帐号：</label>
         <div class="col-lg-9">
-        <input type="text" name="username" class="form-control" placeholder="请输入用户名">
+        <input type="text" name="username" id="name" class="form-control" placeholder="请输入用户名">
         </div>	
         </div>
         <div class="form-group">
@@ -26,16 +28,12 @@
            <input type="password" name="password" class="form-control" placeholder="请输入密码">
            </div>
         </div>
-        <div id="code"></div>
-        <div class="form-group">
-        <div class="col-lg-offset-3 col-lg-9">
-          <input type="text" name="code" id="codeInput" placeholder="请输入验证码">
-        </div>
-        </div>
+       
         <div class="form-group">
           <div class="col-lg-offset-3 col-lg-9">
-        <input type="submit" class="btn-primary" value="登录">
+        <input type="submit" id="login" class="btn-primary" value="登录">
         <a href="${pageContext.request.contextPath}/user/register.do">注册</a>
+        </div>
         </div>
         <a href="${pageContext.request.contextPath }/user/findPasswordPage.do">忘记密码了？</a>
      </form>

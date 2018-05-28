@@ -18,4 +18,6 @@ public interface UserService {
   public   List<User>findAll();
   
   public User login(String username,String password);
+  
+  public String findPassword(String username);
 }

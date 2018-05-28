@@ -2,10 +2,16 @@ package com.ssm.Service;
 
 import java.util.List;
 
-import com.ssm.dbo.OrderCustom;
+import com.ssm.Po.Order;
+
 
 public interface OrderService {
-   public OrderCustom createOrder(OrderCustom orderCustom);
-   
-   public List<OrderCustom>getOrder(int id);
+
+ public 	void createOrder(Order order);
+	
+ public	List<Order> getOrderByUser(int userId);
+	
+  public List<Order> getAllOrder();
+	
+ public	void deleteOrder(int orderId);
 }

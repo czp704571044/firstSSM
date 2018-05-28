@@ -2,26 +2,40 @@ package com.ssm.Service.ServiceImp;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
 
 import com.ssm.Mapper.OrderMapper;
+import com.ssm.Po.Order;
 import com.ssm.Service.OrderService;
-import com.ssm.dbo.OrderCustom;
-
+@Service
 public class OrderServiceImp implements OrderService {
-    @Autowired
-    private OrderMapper orderMapper;
+  @Resource
+  private OrderMapper orderMapper;
 	
 	@Override
-	public OrderCustom createOrder(OrderCustom orderCustom) {
+	public void createOrder(Order order) {
 		// TODO Auto-generated method stub
-		return orderMapper.insertOrder(orderCustom);
+		orderMapper.createOrder(order);
 	}
 
 	@Override
-	public List<OrderCustom>  getOrder(int id) {
+	public List<Order> getOrderByUser(int userId) {
 		// TODO Auto-generated method stub
-		return orderMapper.getOrder(id);
+		return orderMapper.getOrderByUser(userId);
+	}
+
+	@Override
+	public List<Order> getAllOrder() {
+		// TODO Auto-generated method stub
+		return orderMapper.getAllOrder();
+	}
+
+	@Override
+	public void deleteOrder(int orderId) {
+		// TODO Auto-generated method stub
+		orderMapper.deleteOrder(orderId);
 	}
 
 }

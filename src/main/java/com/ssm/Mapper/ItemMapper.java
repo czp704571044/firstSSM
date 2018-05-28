@@ -13,5 +13,7 @@ public interface ItemMapper {
 	 
 	 Item findItemById(int id);
 	 
-     void updateItem(int id);
+     void updateItem(Item item);
+     
+     List<Item> searchByItemName(String name);
 }

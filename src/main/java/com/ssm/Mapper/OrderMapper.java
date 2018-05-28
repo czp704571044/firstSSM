@@ -2,10 +2,17 @@ package com.ssm.Mapper;
 
 import java.util.List;
 
-import com.ssm.dbo.OrderCustom;
+import com.ssm.Po.Order;
 
 public interface OrderMapper {
-  OrderCustom insertOrder(OrderCustom orderCustom);
-  
-  List<OrderCustom> getOrder(int id);
+ 
+	void createOrder(Order order);
+	
+	List<Order> getOrderByUser(int userId);
+	
+	List<Order> getAllOrder();
+	
+	void deleteOrder(int orderId);
+	
+    
 }

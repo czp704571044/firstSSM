@@ -7,6 +7,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <p>  ${msg} </p>
-
+ <a href="${pageContext.request.contextPath}/user/loginPage.do">重新返回登陆界面</a>
 </body>
 </html>

@@ -1,7 +1,15 @@
 $(function(){
-	 $("menu-header1 ul li:first").hover(function() {
-	 	$("menu-header1 ul li a:not(:first)").css("display","block");
-	 }, function() {
-	    $("menu-header1 ul li a:not(:first)").css("display","none");	
-	 },200);
+	//控制搜索按钮
+	$("#buttonOfSearch").click(function(){
+		var data=$("#input").val();
+		$.ajax({
+			type:"post",
+			url:/item/search.do,
+			data:"data",
+			dataType:"json",
+			success:function(data){
+				alert("data");
+			}
+		})
+	})
 	});

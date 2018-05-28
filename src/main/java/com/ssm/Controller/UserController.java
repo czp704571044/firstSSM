@@ -2,6 +2,7 @@ package com.ssm.Controller;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ssm.Po.User;
@@ -26,12 +28,16 @@ public class UserController {
 	}
 	
 	@RequestMapping(value="/login.do")
-	public ModelAndView login(ModelAndView mv,HttpSession hs,String username,String password) {
+	public ModelAndView login(ModelAndView mv,HttpSession hs,String username,String password,HttpServletResponse response) {
 		User user=userService.login(username, password);
+		Cookie cookie_username=new Cookie("username", username);
+		cookie_username.setMaxAge(60*60*60);
+		response.addCookie(cookie_username);
+		
 		if(user!=null) {
 			hs.setAttribute("user", user);
 			mv.addObject("msg", "您登陆成功！");
-			mv.setViewName("success");
+			mv.setViewName("index");
 		}
 		else {
 			System.out.println("登陆失败");
@@ -72,9 +78,9 @@ public class UserController {
 	}
 	
 	@RequestMapping(value="/updateUser.do")
-	public String updateUser(User user,Model model) {
+	public String updateUser(User user,Model model,@RequestParam("userId")int userId) {
 		if(userService.update(user)) {
-			user=userService.findUserById(user.getUserId());
+			user=userService.findUserById(userId);
 			model.addAttribute("user", user);
 			return "redirect:/user/getAllUser.do";
 		}
@@ -107,11 +113,30 @@ public class UserController {
 		return "allUser";
 	}
 	
+	@RequestMapping(value="/index.do")
+	public String index(HttpSession hs,User user,HttpServletRequest request,Model model) {
+	   Cookie[] cookies=request.getCookies();
+	   if(cookies!=null&&cookies.length>0) {
+		   for(Cookie cookie:cookies) {
+			   if(cookie.getName().equals("username")) {
+				   model.addAttribute("username", cookie.getValue());
+			   }
+		   }
+	   }
+		return "index";
+	}
 	
+	@RequestMapping(value="/findPasswordPage.do")
+	public String findPasswordPage() {
+		return "findPasswordPage";
+	}
 	
-	
-	
-	
+	@RequestMapping(value="/findPassword.do")
+	public String findPassword(Model model,String username) {
+		String password=userService.findPassword(username);
+		model.addAttribute("password", password);
+		return "getPassword";
+	}
 	
 	
 	

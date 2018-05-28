@@ -16,12 +16,17 @@ WHERE itemId=#{itemId}
 SELECT * FROM item 
 </select>
 
+<select id="searchByItemName" parameterType="String" resultType="Item">
+SELECT * FROM item
+where name=#{name}
+</select>
+
 <select id="findItemById" parameterType="int" resultType="Item">
 SELECT * FROM item 
 WHERE itemId=#{itemId}
 </select>
 
-<update id="updateItem" >
+<update id="updateItem" parameterType="Item">
 UPDATE item SET 
 name=#{name}, description=#{description}, price=#{price}, stock=#{stock}, img=#{img}
 </update>

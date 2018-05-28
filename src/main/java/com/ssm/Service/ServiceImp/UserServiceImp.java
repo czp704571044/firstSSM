@@ -52,6 +52,12 @@ public User login(String username, String password) {
 	return userMapper.login(username,password);
 }
 
+@Override
+public String findPassword(String username) {
+	// TODO Auto-generated method stub
+	return null;
+}
+
 
 	
 }
